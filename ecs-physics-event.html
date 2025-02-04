@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+
+<body class="white-color">
+    <h1 class="text-center">
+        ECS Physics Event
+    </h1>
+    <div class="text-center popup-des">
+        <div>
+            Unity ECS brings a lot of performance benefits. But it is also a system that is very difficult to approach
+            for beginners. One of those problems is physics events.
+        </div>
+        <div>
+            Unlike GameObject or MonoBehaviour which have built-in methods for those events such as OnCollisionEnter,
+            OnCollisionStay, OnCollisionExit, OnTriggerEnter, OnTriggerStay, OnTriggerExit.
+        </div>
+        <div>
+            For Unity ECS everything is much
+            more complicated, so ECS Physics Event was created to simplify this.
+            ECS Physics Event will create similar events and methods in GameObject or MonoBehaviour, making it easy for
+            us to access and use quickly.
+        </div>
+
+    </div>
+    <h2 class="text-center">How To Use</h2>
+    <ul class="infor-project text-center">
+        <li><strong>Note: ECS is a completely different system than GameObject, this guide is only for people who have basic knowledge of ECS and understand the main steps in ECS.</strong></li>
+        <li>1. Make sure you have installed all the packages including: com.unity.entities, com.unity.physics</li>
+        <li><img class="w-75" src="./img/ecs1.png"/></li>
+        <li><img class="w-75" src="./img/ecs2.png"/></li>
+        <li>2. After successfully installing com.unity.physics, select the Sample tab and import Custom Physics Authoring</li>
+        <li><img class="w-75" src="./img/ecs3.png"/></li>
+        <li><img class="w-75" src="./img/ecs4.png"/></li>
+        <li><img class="w-75" src="./img/ecs5.png"/></li>
+        <li>3. Now create an Entity inside a Sub Scene, instead of using the default Collider component, use Physics Shape.</li>
+        <li><img class="w-75" src="./img/ecs7.png"/></li>
+        <li>4. In the Collision Response field select Collide Raise Collision Events to detect collision events or Raise Trigger Events to detect Trigger events.</li>
+        <li><img class="w-75" src="./img/ecs8.png"/></li>
+        <li>5. Give that Entity a component tag, ECS Physics Event needs it to differentiate between different types of entities.</li>
+        <li><img class="w-75" src="./img/ecs9.png"/></li>
+        <li>6. Create a partial class that extends HandleCollisionEventSystem or HandleTriggerEventSystem where T is the component tag of the entity.</li>
+        <li>7. Now you can override the Enter, Stay or Exit event methods with the params self, target. Where self is the entity receiving the event, target is the entity that caused the event.</li>
+        <li><img class="w-75" src="./img/ecs10.png"/></li>
+        <li>Note, use EntityCommandBuffer instead of EntityManager and do not use EntityCommandBuffer.Playback or EntityCommandBuffer.Dispose.</li>
+        <li><img class="w-75" src="./img/ecs11.png"/></li>
+    </ul>
+    <a class="content-center google-play-btn">
+        <img width="200px" src="./img/get-it-on-github.png"
+            onclick="onClickGoogleLink('https://github.com/xuannquy20/ECS_Physics_Event.git')" />
+    </a>
+
+    <h1 class="close-btn text-center" onclick="onClickClose()">Close</h1>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a class="header-link" href="./index.html">Home</a></li>
+                <li><a class="header-link" href="./games.html">Games</a></li>
+                <li><a class="selected-header-link" href="./tools.html">Tools</a></li>
+                <li><a class="header-link" href="./resume.html">Resume</a></li>
+                <li><a class="header-link" href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="about-me white-color">
+        <h1 class="strong-text">My Tools</h1>
+        <div class="description-about-me">Here are some tools I've created</div>
+
+        <div class="project-list">
+            <div class="project-item item-60">
+                <a onclick="onClickProject('./quick-asset.html')">
+                    <img class="project-img-item" src="./img/quick-asset-1.png" />
+                    <div class="project-item-footer">Quick Asset</div>
+                </a>
+            </div>
+            <div class="project-item item-40">
+                <a onclick="onClickProject('./ecs-physics-event.html')">
+                    <video class="project-img-item" loop autoplay muted>
+                        <source src="./img/ECS_Physics_Demo.mp4" type="video/mp4">
+                        Trình duyệt của bạn không hỗ trợ video.
+                    </video>
+                    <div class="project-item-footer">ECS Physics Event</div>
+                </a>
+            </div>
+            <div class="project-item item-50">
+                <a onclick="onClickProject('./dot-army.html')">
+                    <img class="project-img-item" src="./img/dot-army.webp" />
+                    <div class="project-item-footer">Dot Army: Idle RTS</div>
+                </a>
+            </div>
+            <div class="project-item item-50">
+                <a onclick="onClickProject('./flag-painting.html')">
+                    <img class="project-img-item" src="./img/flag-painting.webp" />
+                    <div class="project-item-footer">Flag Drawing Puzzle Games</div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="white-color">
+        Reach me at <a class="strong-text" href="mailto: nguyenc501@gmail.com"><strong
+                class="strong-text">nguyenc501@gmail.com</strong></a>
+    </footer>
+
+    <div class="popup" id="popup">
+        <iframe class="popup-content" src=""></iframe>
+    </div>
+</body>
+</html>

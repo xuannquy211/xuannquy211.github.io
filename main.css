@@ -1,0 +1,283 @@
+* {
+    transition: 0.5s;
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Karla, Helvetica, Arial, sans-serif;
+    
+    background-color: black;
+    background-size: cover;
+
+    animation-name: slide-down;
+  animation-duration: 0.5s;
+}
+
+
+header {
+    width: 100%;
+    background-color: gray;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    background: rgb(50, 47, 47);
+    backdrop-filter: blur(10px);
+    align-items: center;
+    flex-direction: column;
+
+    z-index: 10;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 25px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.header-link {
+    color: gray;
+}
+
+.selected-header-link {
+    border-bottom: 4px solid white;
+}
+
+.white-color {
+    color: rgb(177, 177, 177);
+}
+
+.about-me {
+    padding: 150px;
+}
+
+.p-tb-50 {
+    padding: 50px 0px;
+}
+
+.description-about-me {
+    line-height: 30px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.profile {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.c-70 {
+    width: 70%;
+}
+
+.c-30 {
+    width: 30%;
+}
+
+.avt-profile {
+    border-radius: 500px;
+}
+
+.strong-text {
+    color: white;
+}
+
+footer {
+margin-top: 100px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px 150px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.project-item {
+    overflow: hidden;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    border-radius: 10px;
+}
+
+.item-60 {
+    width: 59%;
+}
+
+.item-40 {
+    width: 39%;
+}
+
+.item-50 {
+    width: 49%;
+}
+
+.project-img-item {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-img-item:hover {
+    scale: 110%;
+}
+
+.project-item-footer {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.697);
+    bottom: 0;
+    margin-top: -50px;
+
+    font-size: 20px;
+
+    color: rgb(209, 209, 209);
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.h-300 {
+    height: 500px;
+}
+
+.popup {
+    color: rgb(222, 222, 222);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.708) !important;
+
+    z-index: 20;
+    display: none;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.popup-content{
+    width: 70%;
+    min-height: 650px;
+    background-color: black;
+    border-radius: 10px;
+    padding: 20px 30px;
+    overflow: hidden;
+    border: 0px;
+
+    animation-name: slide-down;
+  animation-duration: 0.5s;
+
+    z-index: 21;
+}
+
+.content-center{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.m-10{
+    margin: 10px;
+}
+
+.video-popup{
+    height: 500px;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.popup-des{
+    padding: 20px 40px;
+    line-height: 30px;
+    font-size: 20px;
+}
+
+.google-play-btn{
+    margin: 20px 0px;
+}
+
+.google-play-btn img{
+    cursor: pointer;
+}
+
+.infor-project{
+    margin-top: 10px;
+}
+
+.infor-project li{
+    font-size: 17px;
+    line-height: 30px;
+}
+
+.close-btn{
+    cursor: pointer;
+    font-size: 30px;
+    margin-top: 50px;
+}
+
+.close-btn:hover{
+    color: white;
+    text-decoration: underline;
+}
+
+h2{
+    margin-top: 20px;
+}
+
+@keyframes slide-down
+{
+    from
+    {
+        margin-top: -200px;
+        opacity: 0;
+    }
+    to
+    {
+        margin-top: 0px;
+        opacity: 1;
+    }
+}
+
+.w-75{
+    width: 75%;
+}
