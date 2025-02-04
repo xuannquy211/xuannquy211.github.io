@@ -281,3 +281,15 @@ h2{
 .w-75{
     width: 75%;
 }
+
+.mt-20{
+    margin-top: 20px;
+}
+
+.contact li{
+padding: 5px;
+}
+
+.icon-contact{
+    width: 25px;
+}
