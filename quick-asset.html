@@ -17,23 +17,134 @@
     <div class="text-center popup-des">
         Quick Asset is a collection of tools that make coding faster.
     </div>
-        <h2 class="text-center">Main Feature</h2>
-        <ul class="infor-project text-center">
-            <li>Create different types of scripts faster</li>
-            <li>Create Toast with just 1 command</li>
-            <li>Pool Management</li>
-            <li>Popup Management</li>
-            <li>Data Save Management</li>
-            <li>SO Management</li>
-            <li>Some utilities</li>
-            <li>Integrate some popular Design Patterns</li>
-        </ul>
-    <a class="content-center google-play-btn">
-        <img width="200px" src="./img/get-it-on-github.png"
-            onclick="onClickGoogleLink('https://github.com/xuannquy20/Quick_Asset.git')" />
-    </a>
+    <h2 class="text-center">Main Feature</h2>
+    <ul class="infor-project text-center">
+        <li>Create different types of scripts faster</li>
+        <li>Create Toast with just 1 command</li>
+        <li>Pool Management</li>
+        <li>Popup Management</li>
+        <li>Data Save Management</li>
+        <li>SO Management</li>
+        <li>Some utilities</li>
+        <li>Integrate some popular Design Patterns</li>
+    </ul>
 
-    <h1 class="close-btn text-center" onclick="onClickClose()">Close</h1>
+    <div class="quick-asset-tutorial">
+        <h1>How To Use</h1>
+
+        <h3>1. Create different types of scripts faster</h3>
+        <div>- Create Component:</div>
+        <div>+ Create Script/Unity/Component</div>
+        <div>+ Create a Script that inherits MonoBehaviour</div>
+
+        <div>- Create Scriptable Object:</div>
+        <div>+ Create Script/Unity/Scriptable Object</div>
+        <div>+ Create a Script that inherits ScriptableObject</div>
+        <div>+ The generated script will be automatically added to the Asset Menu with the path "Game Datas/[Script
+            Name]"</div>
+
+        <div>- Create Editor:</div>
+        <div>+ Create Script/Unity/Editor</div>
+        <div>+ Create a Script that inherits Editor</div>
+
+        <div>- Create Editor Window</div>
+        <div>+ Create Script/Unity/Editor Window</div>
+        <div>+ Create a Script that inherits EditorWindow</div>
+
+        <div>- Create C# class</div>
+        <div>+ Create Script/C# Core/Class</div>
+
+        <div>- Create C# abstract class</div>
+        <div>+ Create Script/C# Core/Abstract Class</div>
+
+        <div>- Create C# interface</div>
+        <div>+ Create Script/C# Core/Interface</div>
+
+        <h3>2. Create Toast with just 1 command</h3>
+        <div>- Add NotiManager prefab to first scene</div>
+        <div>- Use NotiManager.Instance.AddNoti(string content, Color colorText, NotiType type)</div>
+        <div>+ There are 2 NotiTypes: NotiType.StackUp, NotiType.FlyInCenter</div>
+        <div>+ Default NotiType is NotiType.StackUp</div>
+
+        <h3>3. Pool Management (this is old version, the new version will be update soon)</h3>
+        <div>- Create a GameObject, that should be parent of pool elements</div>
+        <div>- Add PopupManagement script to newly created GameObject</div>
+        <div>- Open PopupManagement script and scrool to last line</div>
+        <div>- Add a new Tag in Tag enum, it is to identify pool elements.</div>
+        <div>- In Inspector of PopupManagement script, select Tag field</div>
+        <div>- Add GameObject prefab to Prefab field</div>
+        <div>- Add default quantity for pool elements in Quantity</div>
+        <div>- Add parent of pool elements to Container field, if not the newly created GameObject will be default</div>
+        <div><img src="https://github.com/user-attachments/assets/41489c96-25e2-4617-8af6-a188c9c7264d" /></div>
+
+        <div>- Coding:</div>
+        <div>+ Use PoolManager.Ins.GetObject(Tag tag) to get a transform of element, the element will be enable</div>
+        <div>+ Use PoolManager.Ins.BackToPool(Transform element, Tag tag) toreturn the element to the pool, the element
+            will disable itself</div>
+
+        <h3>4. Popup Management</h3>
+        <div>- Create a Popup prefab, make sure that have a script inherits PopupUI<T> with T is that script class type
+        </div>
+        <div><img src="https://github.com/user-attachments/assets/f6eb8df7-bd59-4eb2-af00-8e6c8931dbec" /></div>
+        <div><img src="https://github.com/user-attachments/assets/4abc0b73-7168-4e7f-9bce-777ecedd4598" /></div>
+        <div>- Add a large GameObject that wraps the UI content to the MainUI field for a slide-down effect (optional)
+        </div>
+        <div>- Add small ui to UIEffect field for zoom in effect (optional)</div>
+        <div>- Now you just need to use the command: [Script Name].Show() to display the Popup</div>
+        <div><img src="https://github.com/user-attachments/assets/5a5fd581-c317-45d5-a560-edc5c434d453" /></div>
+        <div>- Use Hide() to hide popup, use can add a callback, that callback will active when popup destroy</div>
+        <div><img src="https://github.com/user-attachments/assets/8fe3bfff-8f6e-4b83-a97a-9744bc21aa13" /></div>
+
+        <h3>5. Data Save Management</h3>
+        <div>- Example:
+
+            <div><img src="https://github.com/user-attachments/assets/4b31e0f0-2f8b-4238-8b05-3b2e3b2ddbf1" /></div>
+            <div>- Create a data class (Example: CurrencyData)</div>
+            <div>- Create a management class (Example: CurrencyDataManagement) inherits SessionPref<T> with T is data
+                    class (Example: CurrencyData)</div>
+            <div>- Add get set data function</div>
+            <div>- Now you can use your data any where</div>
+
+            <div><img src="https://github.com/user-attachments/assets/94814c8d-f189-41a2-853a-935b2c615acd" /></div>
+
+            <h3>6. SO Management</h3>
+            <div>- Note: Only support non-duplicate SO.</div>
+            <div>- For example: You have SO Quest and you create 10 different Quests and each Quest is configured by
+                each SO, these SOs will not be able to use Quick Asset support tools. Instead, create 1 SO Quest
+                Container, which will be 1 SO that contains all Quests and it is unique</div>
+            <div>- Create a SO Script inherits BaseConfig with T is script class type</div>
+
+            <div><img src="https://github.com/user-attachments/assets/056533e0-2c21-4b5d-85f6-f0d3fb42ed7a" /></div>
+            <div>- Now you can use your so any where with GetConfig command</div>
+
+            <div><img src="https://github.com/user-attachments/assets/b84c9769-9a1c-4fe5-923f-4cfa2416445f" /></div>
+
+            <h3>7. Some utilities</h3>
+            <div>- UI Condition Controller</div>
+
+            <div><img src="https://github.com/user-attachments/assets/50d261b7-804f-41ed-acc2-0ba8953786be" /></div>
+            <div><img src="https://github.com/user-attachments/assets/8ec82f6f-3204-4731-9eac-5ea2f0a13faa" /></div>
+            <div>+ In this case, I have a item in shop, But I only want this item to show up when I have 100 gold</div>
+            <div>+ So I create ShowItemShop script inherits UIConditionController</div>
+            <div>+ In OnBeforeCheck function, we need to add conditions to display through the AddCondition</div>
+            <div>+ In AddListener, we will add Observer key, every time the Observer event with the corresponding key is
+                trigger, the check will be triggered again.</div>
+            <div>+ Add script to a GameObject that is parent of item GameObject</div>
+            <div>+ Drag item GameObject to EligibleUI field</div>
+            <div>+ If you want to show another GameObject when the GameObject item is not eligible to be displayed, drag
+                that GameObject into the NotEnoughtConditionUI field. But if you don't want to show any other
+                alternative GameObject, choose HideOnNotEnoughtCondition</div>
+
+
+        </div>
+
+        <a class="content-center google-play-btn">
+            <img width="100px"
+                src="./img/png-transparent-download-now-download-icon-download-button-download-logo-flat-icon-flat-logo-flat-image-button-flat-round-thumbnail-removebg-preview.png"
+                onclick="onClickGoogleLink('https://drive.google.com/file/d/1r0lL3B-MSGHzMK_XxJ4QD91S5FsZB-BO/view?usp=sharing')" />
+        </a>
+
+        <h1 class="close-btn text-center" onclick="onClickClose()">Close</h1>
 </body>
 
 </html>
